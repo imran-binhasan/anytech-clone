@@ -1,6 +1,6 @@
-const { createBrowserRouter } = require("react-router-dom");
-const { default: Home } = require("../pages/Home");
-const { default: NotFound } = require("../pages/NotFound");
+import { createBrowserRouter } from "react-router-dom";
+import Home from "../pages/Home";
+import NotFound from "../pages/NotFound"
 
 const Router = createBrowserRouter([
     {
