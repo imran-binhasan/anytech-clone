@@ -1,0 +1,13 @@
+<svg width="65" height="79" viewBox="0 0 65 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6.56677 78.5L12.3403 68.5L0.793271 68.5L6.56677 78.5ZM17.5668 48.4353L17.5668 47.4353L17.5668 48.4353ZM52.7278 48.4353L52.7278 47.4353L52.7278 48.4353ZM63.7277 37.4353L64.7277 37.4353L63.7277 37.4353ZM7.56677 69.5L7.56677 59.4353L5.56677 59.4353L5.56677 69.5L7.56677 69.5ZM17.5668 49.4353L52.7278 49.4353L52.7278 47.4353L17.5668 47.4353L17.5668 49.4353ZM64.7277 37.4353L64.7277 0.500002L62.7277 0.500002L62.7277 37.4353L64.7277 37.4353ZM52.7278 49.4353C59.3552 49.4353 64.7277 44.0627 64.7277 37.4353L62.7277 37.4353C62.7277 42.9582 58.2506 47.4353 52.7278 47.4353L52.7278 49.4353ZM7.56677 59.4353C7.56678 53.9125 12.0439 49.4353 17.5668 49.4353L17.5668 47.4353C10.9394 47.4353 5.56678 52.8079 5.56677 59.4353L7.56677 59.4353Z" fill="url(#paint0_linear_3877_14260)"/>
+  <defs>
+    <linearGradient id="paint0_linear_3877_14260" x1="49.5534" y1="13.535" x2="49.5534" y2="78.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E9EA" stop-opacity="0">
+        <animate attributeName="stop-opacity" values="0; 1; 0" dur="6s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="1" stop-color="#1F80F0">
+        <animate attributeName="stop-color" values="#1F80F0; #00E9EA; #1F80F0" dur="6s" repeatCount="indefinite" calcMode="spline" keyTimes="0; 0.5; 1" keySplines="0.42 0 0.58 1; 0.42 0 0.58 1" />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
