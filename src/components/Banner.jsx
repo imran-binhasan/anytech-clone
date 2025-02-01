@@ -1,8 +1,11 @@
-import { useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useEffect } from "react";
 import svg1 from "../assets/backgrounds/WaveLinesDesktop1.svg";
-import svg3 from "../assets/backgrounds/WaveLinesDesktop3.svg";
 import svg4 from "../assets/backgrounds/WaveLinesDesktop4.svg";
+import svg2 from "../assets/backgrounds/WaveLinesDesktop2.svg";
+import svg3 from "../assets/backgrounds/WaveLinesDesktop3.svg";
+import heroImage from "../../public/banner-image.png";
+import Navbar from "./Navbar";
 
 const Banner = () => {
   const mouseX = useMotionValue(0);
@@ -17,7 +20,6 @@ const Banner = () => {
         x: (e.clientX / window.innerWidth) * 2 - 1,
         y: (e.clientY / window.innerHeight) * 2 - 1,
       };
-
       mouseX.set(normalized.x);
       mouseY.set(normalized.y);
     };
@@ -26,8 +28,8 @@ const Banner = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-  const DecorativeElement = ({ src, position, size, hoverDirection }) => {
-    const xRange = hoverDirection === "up" ? [-5, 5] : [5, -5];
+  const AnimatedSVG = ({ src, position, hoverDirection }) => {
+    const xRange = hoverDirection === "up" ? [-10, 10] : [10, -10];
     const yRange = hoverDirection === "up" ? [-8, 8] : [8, -8];
 
     const x = useSpring(useTransform(smoothX, [-1, 1], xRange), {
@@ -42,15 +44,9 @@ const Banner = () => {
     return (
       <motion.img
         src={src}
-        alt="Decorative SVG"
+        alt="Decorative Wave"
         className="absolute opacity-40"
-        style={{
-          ...position,
-          width: size.width,
-          height: size.height,
-          x,
-          y,
-        }}
+        style={{ ...position, width: "100%", x, y }}
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
@@ -59,50 +55,40 @@ const Banner = () => {
   };
 
   return (
-    <motion.div
-      className="relative banner object-cover bg-no-repeat h-[80vh] w-full overflow-hidden cursor-default"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <motion.div
-        className="relative z-10 h-[80vh] max-w-5xl mx-auto px-10 py-10 text-white"
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <motion.h1
-          className="text-5xl mb-6 font-bold"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          Legacy no longer
-        </motion.h1>
-        <motion.p
-          className="text-2xl mb-8"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          Talk to us to find out how we can transform your organisation for the future
-        </motion.p>
-        <motion.a
-          href="#"
-          className="px-6 py-3 inline-block bg-orange-500 hover:bg-orange-600 text-white rounded-md text-lg transition-colors duration-300"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.5 }}
-        >
-          Contact Us ›
-        </motion.a>
-      </motion.div>
+    <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }} className="relative text-white overflow-hidden bg-blue-800 pl-10">
+      {/* Navigation */}
+   <Navbar/>
 
-      {/* Decorative SVG Elements */}
-      <DecorativeElement src={svg1} position={{ top: 0, left: 0 }} size={{ width: "100%", height: 600 }} hoverDirection="up" />
-      <DecorativeElement src={svg3} position={{ top: 0, left: 0 }} size={{ width: "100%", height: 600 }} hoverDirection="up" />
-      <DecorativeElement src={svg4} position={{ top: 0, left: 0 }} size={{ width: "100%", height: 600 }} hoverDirection="down" />
-    </motion.div>
+      {/* Hero Section */}
+      <div className="relative grid grid-cols-12 container mx-auto">
+        {/* Left Content */}
+        <div className="col-span-4 text-center md:text-left z-10">
+          <h2 className="text-7xl font-bold leading-tight absolute mt-20">Embrace the <br /> <span className="">future of finance</span></h2>
+          <p className="text-lg mt-68 absolute">
+            Reimagine financial services with AnyTech’s open platform, distributed <br /> banking solution that powers transformation.
+          </p>
+          <button className="mt-96 bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg text-lg">Reach Out to Us</button>
+        </div>
+
+        {/* Right Image */}
+        <div className="relative col-span-8">
+          <div className="relative overflow-hidden">
+            <img
+              src={heroImage}
+              alt="Professional woman with phone"
+              className="relative object-cover rounded-lg shadow-lg scale-[1.4] -ml-24 transform"
+              style={{ clipPath: "polygon(77% 0, 100% 0, 100% 49%, 72% 100%, 21% 100%)" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* SVG Waves with Hover Effects */}
+      <AnimatedSVG src={svg1} position={{ bottom: -10, left: 0 }} hoverDirection="up" />
+      <AnimatedSVG src={svg2} position={{ bottom: 50, left: 0 }} hoverDirection="down" />
+      <AnimatedSVG src={svg3} position={{ top: 0, right: 0 }} hoverDirection="up" />
+      <AnimatedSVG src={svg4} position={{ bottom: 0, right: 0 }} hoverDirection="down" />
+    </div>
   );
 };
 
