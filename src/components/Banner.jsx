@@ -55,7 +55,7 @@ const Banner = () => {
   };
 
   return (
-    <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 95%, 0 100%)" }} className="relative text-white overflow-hidden bg-blue-800 pl-10">
+    <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)" }} className="relative text-white overflow-hidden bg-blue-800 pl-10">
       {/* Navigation */}
    <Navbar/>
 
