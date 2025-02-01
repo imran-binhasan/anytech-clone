@@ -4,6 +4,7 @@ import svg1 from "../assets/backgrounds/WaveLinesDesktop1.svg";
 import svg2 from "../assets/backgrounds/WaveLinesDesktop2.svg";
 import svg3 from "../assets/backgrounds/WaveLinesDesktop3.svg";
 import svg4 from "../assets/backgrounds/WaveLinesDesktop4.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const mouseX = useMotionValue(0);
@@ -28,8 +29,8 @@ const Footer = () => {
   }, [mouseX, mouseY]);
 
   const DecorativeElement = ({ src, position, size, hoverDirection }) => {
-    const xRange = hoverDirection === "up" ? [-5, 5] : [5, -5];
-    const yRange = hoverDirection === "up" ? [-8, 8] : [8, -8];
+    const xRange = hoverDirection === "up" ? [-20, 20] : [20, -20];
+    const yRange = hoverDirection === "up" ? [-32, 32] : [32, -32];
 
     const x = useSpring(useTransform(smoothX, [-1, 1], xRange), {
       damping: 30,
@@ -60,12 +61,45 @@ const Footer = () => {
   };
 
   return (
-    <motion.div style={{ clipPath: "polygon(100% 65%, 0 0, 0 100%, 100% 100%)" }} 
-      className="relative  object-cover bg-no-repeat h-80 w-full overflow-hidden cursor-default bg-blue-800 "
+    <>
+        <motion.div style={{ clipPath: "polygon(100% 65%, 0 0, 0 100%, 100% 100%)" }} 
+      className="relative  object-cover bg-no-repeat h-96 w-full overflow-hidden cursor-default bg-blue-800 "
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
+       <motion.div
+        className="relative z-10 h-60 max-w-5xl mt-40 mx-auto p-6  text-white"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
+        <motion.h1
+          className="text-4xl mb-6 font-medium"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Legacy no longer
+        </motion.h1>
+        <motion.p
+          className="text-xl mb-8"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          Talk to us to find out how we can transform your organisation for the future
+        </motion.p>
+        <motion.a
+          href="#"
+          className="px-5 py-1.5 inline-block bg-orange-500 hover:bg-orange-600 text-white rounded-sm transition-colors duration-300"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.5 }}
+        >
+          Contact Us ›
+        </motion.a>
+      </motion.div>
 
       {/* Decorative SVG Elements */}
       <DecorativeElement src={svg1} position={{ top: 0, left: 0 }} size={{ width: "100%", height: 400 }} hoverDirection="up" />
@@ -73,6 +107,32 @@ const Footer = () => {
       <DecorativeElement src={svg3} position={{ top: 0, left: 0 }} size={{ width: "100%", height: 400 }} hoverDirection="up" />
       <DecorativeElement src={svg4} position={{ top: 0, left: 0 }} size={{ width: "100%", height: 400 }} hoverDirection="down" />
     </motion.div>
+    <div className="bg-gray-800 divider  border-t border-blue-400">
+        <div className="max-w-5xl mx-auto flex justify-between items-center p-6">
+            <h4 className="text-white font-semibold text-2xl">ANYTECH</h4>
+           <div className="flex justify-between text-blue-300 text-xs items-center gap-2">
+            
+            <Link>Our Solutions</Link>
+            <div className="border-r h-8"></div>
+           <nav className="flex justify-between items-center text-blue-300 text-xs  gap-2">
+                <Link>AnyCasS</Link>
+                <Link>AnyBasS</Link>
+                <Link>AnyPasS</Link>
+            </nav>
+           </div>
+        </div>
+    </div>
+    <div className="bg-gray-950 border-t border-gray-600">
+    <div className="max-w-5xl mx-auto flex justify-between items-center text-blue-500 font-medium text-[9px] px-6 py-3">
+        <span>
+            &copy 2025 All rights reserved.Any Technology Pte Ltd.
+        </span>
+        <Link>
+        Privacy policy
+        </Link>
+        </div>
+    </div>
+    </>
   );
 };
 
