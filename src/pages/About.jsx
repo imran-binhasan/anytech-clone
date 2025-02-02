@@ -22,17 +22,17 @@ const About = () => {
     }, []);
 
     return (
-        <section className="flex max-w-6xl mx-auto gap-10 flex-col lg:flex-row items-center justify-between px-6 lg:px-10">
+        <section className="flex my-10 max-w-7xl mx-auto gap-10 flex-col lg:flex-row items-center justify-between px-6">
             {/* Text Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
                 <h4 className="text-blue-600 uppercase lg:text-lg tracking-wider font-semibold tracking-wide">
                     Powering the Future of Finance
                 </h4>
-                <h2 className="text-3xl lg:text-6xl font-medium  text-gray-900 mt-2">
+                <h2 className="text-3xl lg:text-6xl font-medium text-gray-900 mt-2">
                     Uncovering new ways to delight customers
                 </h2>
                 <p className="mt-4 text-gray-700 text-lg font-medium">
-                   AnyTech is revolutionizing financial technology by introducing
+                    AnyTech is revolutionizing financial technology by introducing
                     innovative and real-time transaction account processing capabilities,
                     specifically designed for retail financial services.
                 </p>
@@ -53,34 +53,44 @@ const About = () => {
                 
                 {/* SVG Waves */}
                 <div className="absolute inset-0 w-full h-full">
-                    <img src={svg1} alt="wave" className="absolute -bottom-10 left-10 w-full opacity-100 z-0" />
-                    <img src={svg2} alt="wave" className="absolute -top-25 left-0 w-full opacity-60 z-0" />
+                    <motion.img
+                        src={svg1}
+                        alt="wave"
+                        className="absolute -bottom-10 left-10 w-full opacity-100 z-0"
+                        animate={{ y: yValue * 0.2 }} // Apply movement with delay
+                        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+                    />
+                    <motion.img
+                        src={svg2}
+                        alt="wave"
+                        className="absolute -top-25 left-0 w-full opacity-60 z-0"
+                        animate={{ y: yValue * 0.3 }} // Apply movement with delay
+                        transition={{ type: "spring", stiffness: 100, damping: 30 }}
+                    />
                 </div>
 
                 {/* Floating Icons */}
-                <motion.div
-                    className="absolute top-5 left-5 bg-white p-2 rounded-full shadow-md"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                >
-                    <img src={icon1} alt="Banking Icon" className="w-10 h-10" />
-                </motion.div>
-
-                <motion.div
-                    className="absolute bottom-5 left-10 bg-white p-2 rounded-full shadow-md"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-                >
-                    <img src={icon2} alt="Analytics Icon" className="w-10 h-10" />
-                </motion.div>
-
-                <motion.div
-                    className="absolute top-10 right-5 bg-white p-2 rounded-full shadow-md"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                >
-                    <img src={icon3} alt="Processing Icon" className="w-10 h-10" />
-                </motion.div>
+                <motion.img
+                    src={icon1} 
+                    alt="Banking Icon" 
+                    className="w-20 h-20 absolute top-40 -left-10 rounded-full"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+                />
+                <motion.img
+                    src={icon3} 
+                    alt="Banking Icon" 
+                    className="w-20 h-20 absolute top-60 left-16 rounded-full"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                />
+                <motion.img
+                    src={icon2} 
+                    alt="Banking Icon" 
+                    className="w-25 h-25 absolute top-34 -right-10 rounded-full"
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+                />
             </div>
         </section>
     );

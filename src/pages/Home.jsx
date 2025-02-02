@@ -1,24 +1,24 @@
-import Banner from "../components/Banner";
+
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import About from "./About";
+import Banner from "./Banner";
 import Brands from "./Brands";
 import Philosopy from "./Philosopy";
 import Slider from "./Slider";
 
-
 const Home = () => {
-    return (
-        <>
-        <Navbar/>
-        <Banner/>
-        <About/>
-        <Philosopy/>
-        <Slider/>
-        <Brands/>
-        <Footer/>
-        </>
-    );
+  return (
+    <>
+      <Navbar />
+      <Banner />
+      <About />
+      <Philosopy />
+      <Slider />
+      <Brands />
+      <Footer />
+    </>
+  );
 };
 
 export default Home;

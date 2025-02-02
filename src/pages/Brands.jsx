@@ -6,7 +6,7 @@ import SectionTitle from "../components/SectionTitle";
 import CountUp from "react-countup";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import arrowRight from "../assets/icons/CarouselChevronRight.svg"
+
 
 const images = [
   "https://cdn.sanity.io/images/6jywt20u/production/67ef6d224529c5521d5d38b4ac18521f589865d9-603x414.png?w=320&fm=webp",
@@ -34,7 +34,7 @@ const Brands = () => {
    <>
    <div>
     <SectionTitle title={"TRUSTED BY THE BEST"}/>
-    <div ref={ref} className="flex flex-col md:flex-row justify-around items-center w-4/5 mx-auto my-10">
+    <div ref={ref} className="flex flex-col md:flex-row justify-end items-center space-y-5 md:space-y-0 mx-auto px-5 md:px-0 my-8">
       <div className="flex md:flex-col w-full justify-between items-center">
         <span className="text-6xl lg:text-8xl text-blue-600 font-semibold">
         {">"}{isInView && <CountUp end={20} duration={2} />}
@@ -43,6 +43,7 @@ const Brands = () => {
           Years of Experience
         </span>
       </div>
+      <div className="md:hidden border-b text-blue-200  mb-3 w-full"></div>
       <div className="flex md:flex-col w-full justify-between items-center">
         <span className="text-6xl lg:text-8xl text-blue-600 font-semibold">
           {isInView && <CountUp end={40} duration={2} />}+
@@ -51,6 +52,7 @@ const Brands = () => {
           Financial Institutions
         </span>
       </div>
+      <div className="md:hidden border-b text-blue-200  mb-3 w-full"></div>
       <div className="flex md:flex-col w-full justify-between items-center lg:gap-2">
         <span className="text-6xl lg:text-8xl text-blue-600 font-semibold">
         {">"}{isInView && <CountUp end={200} duration={2} suffix="m" />}
@@ -59,9 +61,10 @@ const Brands = () => {
           Customers Each
         </span>
       </div>
+      <div className="md:hidden border-b text-blue-200  mb-3 w-full"></div>
     </div>
    </div>
-    <div className="md:w-4/5 mx-auto">
+    <div className="max-w-7xl mx-auto my-8">
       {/* Grid for Large and Medium Screens */}
       <div className="hidden md:grid grid-cols-3 lg:grid-cols-5 gap-6 p-4 justify-center items-center">
         {images.map((img, index) => (
@@ -70,7 +73,7 @@ const Brands = () => {
       </div>
 
       {/* Swiper for Small Screens */}
-      <div className="md:hidden w-full overflow-hidden ">
+      <div className="md:hidden max-w-7xl overflow-hidden ">
         <Swiper
           slidesPerView={3}
           spaceBetween={30} // Adjust space between slides

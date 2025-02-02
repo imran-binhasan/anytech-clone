@@ -65,14 +65,18 @@ const Footer = () => {
   return (
     <>
       <motion.div
-        style={{ clipPath: "polygon(100% 50%, 0 0, 0 100%, 100% 100%)" }}
-        className="relative  object-cover bg-no-repeat h-[500px] w-full overflow-hidden cursor-default bg-blue-800 "
+       style={{
+        clipPath: window.innerWidth <= 768
+          ? "polygon(100% 25%, 0 0, 0 100%, 100% 100%)"// Mobile screen
+          : "polygon(100% 50%, 0 0, 0 100%, 100% 100%)" , // Larger screen (less curve)
+      }}
+        className="relative  object-cover bg-no-repeat h-[560px] md:h-[500px] w-full overflow-hidden cursor-default bg-blue-800 "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="relative z-10 h-60 max-w-5xl mt-40 mx-auto p-6  text-white"
+          className="relative z-10 h-60 max-w-7xl mt-40 mx-auto p-6  text-white"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}

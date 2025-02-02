@@ -7,10 +7,10 @@ import line4 from "../assets/icons/easy-banking/Line4.svg";
 import bridge from "../assets/icons/easy-banking/Bridge.svg";
 import { FaShareAlt, FaLightbulb, FaMicrochip } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Fade } from "react-awesome-reveal";
 
 const Philosopy = () => {
   const features = [
@@ -40,7 +40,7 @@ const Philosopy = () => {
         Human-centred innovation
       </h2>
 
-      <div className="relative max-w-6xl mx-auto  rounded-3xl flex flex-col lg:flex-row items-center gap-14">
+      <div className="relative max-w-7xl mx-auto  rounded-3xl flex flex-col lg:flex-row items-center gap-14">
         {/* Left Section */}
         <div className="bg-gradient-to-r from-[#e3f3ff] to-[#fafafa] lg:h-[400px] w-11/12 sm:w-4/5 mx-auto h-[220px]  rounded-3xl px-12 lg:w-[36%]">
           <div className=" h-full my-auto  mx-auto flex justify-center items-center flex-col">
@@ -59,7 +59,7 @@ const Philosopy = () => {
 
         <div className="flex items-center flex-col lg:flex-row gap-20 bg-gradient-to-r from-[#fafafa] h-[400px] rounded-3xl w-11/12 sm:w-4/5 mx-auto lg:w-[64%] px-12 to-[#e3f3ff] ">
           <div>
-            <div className="bg-white py-5 rounded-xl shadow-xl z-20 w-52 text-center">
+            <div className="bg-white py-5 relative rounded-xl shadow-xl z-20 w-52 text-center">
               <p className="text-orange-600  text-sm font-semibold ">
                 MECHANISM
               </p>
@@ -77,76 +77,75 @@ const Philosopy = () => {
               </p>
               <h3 className="text-xl font-medium text-[#1c5295]">Cloud</h3>
             </div>{" "}
-            <p className="text-gray-600 lg:text-[10px] text-[8px] absolute  top-[80%] right-[62%]  lg:right-2 lg:top-20 w-26 md:w-40 lg:w-32">
+            <p className="text-gray-600 lg:text-[10px] text-[8px] absolute  top-[80%] right-[62%]  lg:right-6 lg:top-20 w-26 md:w-40 lg:w-32">
               Scale resources easily on-demand.
             </p>
            <div className="flex items-center">
-           <div className="bg-white py-5 rounded-xl shadow-xl z-20 w-34 sm:w-52 text-center">
+           <div className="bg-white py-5 rounded-xl shadow-xl  w-34 sm:w-52 text-center">
               <p className="text-yellow-600  text-sm font-semibold ">
                 RESOURCE
               </p>
               <h3 className="text-xl font-medium text-[#1c5295]">Data</h3>
             </div>
-            <p className="text-gray-600 lg:text-[10px] text-[8px] absolute lg:right-2 lg:top-64 right-[16%] top-135 w-45 text-center  w-26 md:w-40 lg:w-32">
+            <p className="text-gray-600 lg:text-[10px] text-[8px] absolute lg:right-6 lg:top-64 right-[16%] top-135 text-center  w-26 md:w-40 lg:w-32">
               Valuable, actionable insights from massive data sources.
             </p>
            </div>
           </div>
         </div>
         <img
-          className="absolute lg:top-43 top-53 lg:left-103 w-[14px] z-10 lg:rotate-90"
+          className="absolute lg:top-43 top-53 lg:left-116 w-[14px] z-10 lg:rotate-90"
           src={line1}
           alt=""
         />
         <img
-          className="absolute lg:bottom-26  lg:rotate-270 bottom-59 lg:right-92 right-[59%] lg:w-24 w-20  "
+          className="absolute lg:bottom-26  lg:rotate-270 bottom-59 lg:right-116 right-[50%] sm:right-[59%] lg:w-24 w-20  "
           src={line2}
           alt=""
         />
         <img
-          className="absolute lg:top-26 top-87 lg:rotate-270  lg:right-92 right-[30%] lg:w-24  w-20   "
+          className="absolute lg:top-26 top-87 lg:rotate-270  lg:right-116 right-[30%] lg:w-24  w-20   "
           src={line3}
           alt=""
         />
         <img
-          className="absolute lg:top-54 bottom-44 w-16 lg:w-24  lg:right-36 lg:rotate-270"
+          className="absolute lg:top-48 bottom-44 w-16 lg:right-[15%]  xl:right-76 lg:rotate-270"
           src={line4}
           alt=""
         />
         <img
-          className="absolute top-55 lg:top-45 lg:left-66 lg:rotate-270"
+          className="absolute top-55 lg:top-45 lg:left-[22.5%] xl:left-77 lg:rotate-270"
           src={bridge}
           alt=""
         />
       </div>
-      <div className="max-w-6xl my-10 mx-auto">
+      <div className="max-w-7xl my-10 mx-auto">
       <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-20">
         {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-[#fafafa] shadow-xs flex flex-col p-6 rounded-xl space-y-4"
-          >
-            {feature.icon}
-            <h4 className="text-lg sm:text-xl font-medium">{feature.title}</h4>
-            <p className="text-sm leading-6">{feature.description}</p>
-          </div>
+          <Fade key={index} delay={index * 200} triggerOnce>
+            <div
+              className="bg-[#fafafa] shadow-xs flex flex-col p-6 rounded-xl space-y-4"
+            >
+              {feature.icon}
+              <h4 className="text-lg sm:text-xl font-medium">{feature.title}</h4>
+              <p className="text-sm leading-6">{feature.description}</p>
+            </div>
+          </Fade>
         ))}
       </div>
 
       {/* Swiper for Mobile */}
       <div className="block sm:hidden">
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={1.5}
-
-        >
+        <Swiper spaceBetween={20} slidesPerView={1.5}>
           {features.map((feature, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-[#fafafa] shadow-xs flex flex-col p-6 rounded-xl space-y-4">
-                {feature.icon}
-                <h4 className="text-lg sm:text-xl font-medium">{feature.title}</h4>
-                <p className="text-sm leading-6">{feature.description}</p>
-              </div>
+              <Fade delay={index * 200} triggerOnce>
+                <div className="bg-[#fafafa] shadow-xs flex flex-col p-6 rounded-xl space-y-4">
+                  {feature.icon}
+                  <h4 className="text-lg sm:text-xl font-medium">{feature.title}</h4>
+                  <p className="text-sm leading-6">{feature.description}</p>
+                </div>
+              </Fade>
             </SwiperSlide>
           ))}
         </Swiper>

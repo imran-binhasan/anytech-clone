@@ -54,7 +54,7 @@ const Slider = () => {
       </h2>
 
       {/* Buttons */}
-      <div className="hidden md:flex max-w-6xl mx-auto justify-between gap-4 mt-6 px-6">
+      <div className="hidden md:flex max-w-7xl mx-auto justify-between gap-4 mt-6 px-6">
         {slides.map((slide, index) => (
           <button
             key={index}
@@ -74,11 +74,11 @@ const Slider = () => {
       <Swiper
         onSwiper={setSwiper}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-        className="my-10 max-w-6xl mx-auto"
+        className="my-10 max-w-7xl mx-auto"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="text-center">
-            <div className="flex justify-between shadow-lg rounded-xl border-gray-100 border items-center max-w-6xl mx-auto  p-6">
+            <div className="flex justify-between shadow-lg rounded-xl border-gray-100 border items-center max-w-7xl mx-auto  p-6">
               <div className="flex-1 text-center lg:text-left sm:h-[450px] mx-auto space-y-5">
                 <h4 className="text-blue-600 uppercase lg:text-lg font-semibold tracking-wide">
                  {slide.title}
