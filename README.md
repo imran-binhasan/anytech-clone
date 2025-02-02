@@ -21,3 +21,5 @@ This project aims to replicate the landing page of **AnyTxn** using **React**. T
 ### Key Implementation Details:
 - **Animations**: Using **Framer Motion** and CSS transitions to recreate smooth animations from the original site.
 - **Responsiveness**: Ensured the layout adapts to different screen sizes using media queries and flexbox/grid systems.
+
+###NOTE: 

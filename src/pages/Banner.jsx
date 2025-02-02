@@ -79,7 +79,7 @@ const Banner = () => {
 
         {/* Right Image */}
         <div className="relative md:block hidden col-span-8">
-          <div className="relative overflow-hidden scale-[1.2]">
+          <div className="relative overflow-hidden scale-[1.4]">
             <img
               src={heroImage}
               alt="Professional woman with phone"
