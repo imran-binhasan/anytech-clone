@@ -25,18 +25,18 @@ const About = () => {
         <section className="flex max-w-6xl mx-auto gap-10 flex-col lg:flex-row items-center justify-between px-6 lg:px-10">
             {/* Text Content */}
             <div className="lg:w-1/2 text-center lg:text-left">
-                <h4 className="text-blue-600 uppercase text-sm font-semibold tracking-wide">
+                <h4 className="text-blue-600 uppercase lg:text-lg tracking-wider font-semibold tracking-wide">
                     Powering the Future of Finance
                 </h4>
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">
+                <h2 className="text-3xl lg:text-6xl font-medium  text-gray-900 mt-2">
                     Uncovering new ways to delight customers
-                </h1>
-                <p className="mt-4 text-gray-700 text-lg">
-                    <strong>AnyTech</strong> is revolutionizing financial technology by introducing
+                </h2>
+                <p className="mt-4 text-gray-700 text-lg font-medium">
+                   AnyTech is revolutionizing financial technology by introducing
                     innovative and real-time transaction account processing capabilities,
                     specifically designed for retail financial services.
                 </p>
-                <p className="mt-4 text-gray-600">
+                <p className="mt-4 text-gray-800">
                     Our modern approach surpasses traditional banking and card processing
                     systems, empowering you with the most advanced technology for lasting
                     success.

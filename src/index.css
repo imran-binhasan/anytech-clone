@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
+
+body{
+    font-family: "Poppins", serif;
+}
+
 
 .banner {
     background: radial-gradient(59.82% 121.73% at -9.66% 130.31%, #00e9ea 0%, #1f80f0 52.08%, #005bc4 70%);
     clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%);
     padding: 100px 0;
 }
+

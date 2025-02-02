@@ -56,19 +56,24 @@ const Banner = () => {
 
   return (
     <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)" }} className="relative text-white overflow-hidden bg-blue-800 pl-10">
-      {/* Navigation */}
-   <Navbar/>
+
 
       {/* Hero Section */}
       <div className="relative grid grid-cols-12 container mx-auto">
         {/* Left Content */}
-        <div className="col-span-4 text-center md:text-left z-10">
-          <h2 className="text-7xl font-bold leading-tight absolute mt-20">Embrace the <br /> <span className="">future of finance</span></h2>
-          <p className="text-lg mt-68 absolute">
-            Reimagine financial services with AnyTech’s open platform, distributed <br /> banking solution that powers transformation.
-          </p>
-          <button className="mt-96 bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg text-lg">Reach Out to Us</button>
-        </div>
+        <div className="col-span-4 text-center md:text-left z-10 flex flex-col gap-6 justify-center h-full">
+  <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+    Embrace the <br /> <span className="">future of finance</span>
+  </h2>
+  <p className="text-base md:text-lg">
+    Reimagine financial services with AnyTech’s open platform, distributed <br />
+    banking solution that powers transformation.
+  </p>
+  <button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg text-lg w-max">
+    Reach Out to Us
+  </button>
+</div>
+
 
         {/* Right Image */}
         <div className="relative col-span-8">
@@ -77,7 +82,7 @@ const Banner = () => {
               src={heroImage}
               alt="Professional woman with phone"
               className="relative object-cover rounded-lg shadow-lg scale-[1.4] -ml-24 transform"
-              style={{ clipPath: "polygon(77% 0, 100% 0, 100% 49%, 72% 100%, 21% 100%)" }}
+              style={{ clipPath: "polygon(68% 0, 100% 0, 100% 49%, 72% 100%, 21% 100%)" }}
             />
           </div>
         </div>
